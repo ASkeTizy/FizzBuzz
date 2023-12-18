@@ -4,7 +4,6 @@ public abstract class Component implements  Handler{
 
     private Component container;
 
-//    public abstract boolean check(int i);
 public static Component link(Component first, Component... chain) {
     Component head = first;
     for (Component nextInChain: chain) {
@@ -15,13 +14,12 @@ public static Component link(Component first, Component... chain) {
 }
 
     @Override
-    public abstract boolean handle(int i);
+    public abstract String handle(int i);
 
     @Override
-    public boolean checkNext(int i) {
+    public String checkNext(int i) {
         if(container == null) {
-            System.out.println(i);
-            return true;
+            return i+ "";
         }
         return container.handle(i);
     }
