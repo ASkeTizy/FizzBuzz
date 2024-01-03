@@ -2,10 +2,11 @@ package org.example.fizzBuzz;
 
 public class BuzzComponent extends Component{
     @Override
-    public String handle(int i) {
-        if(i % 5 == 0) {
-            return "Buzz";
+    public Message handle(Message i) {
+        if(i.getValue() % 5 == 0) {
+            return checkNext(new Message(i.getValue(),"Buzz") ) ;
         }
         return checkNext(i);
     }
+
 }
